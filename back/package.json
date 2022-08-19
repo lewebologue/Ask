@@ -1,0 +1,24 @@
+{
+  "name": "pap_askservice_back",
+  "version": "1.0.0",
+  "description": "Pro a Pro Ask service for intern forms digitalisation",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ludovic THUARD",
+  "license": "ISC",
+  "dependencies": {
+    "aes-encryption": "^1.0.4",
+    "bcrypt": "^5.0.1",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "express-rate-limit": "^6.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.5.2",
+    "node": "^17.4.0",
+    "nodemon": "^2.0.15",
+    "password-validator": "^5.2.1"
+  }
+}
