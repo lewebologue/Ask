@@ -7,11 +7,11 @@ const deskItSchema = mongoose.Schema({
     user: {type: String, required: true},
     failureLocation: {type: String, required: true},
     failureDescription: {type: String, required: true},
-    status: {type: String, required: true, default: "Demande envoyée"},
+    status: {type: String},
     userInCharge: {type: String},
     actionsDone: {type: String},
 });
 
 deskItSchema.plugin(uniqueValidator);
 
-module.exports = mongoose.model('Forklift', deskItSchema);
+module.exports = mongoose.model('Desk', deskItSchema);

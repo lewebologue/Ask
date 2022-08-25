@@ -1,7 +1,9 @@
 //Modules
 const express = require('express');
 const mongoose = require('mongoose');
+
 const userRoute = require('./routes/userRoutes');
+const deskRoute = require('./routes/deskRoutes');
 
 const mongoConnect = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER}.qwua6.mongodb.net/${process.env.DB_NAME}?${process.env.DB_SET}`
 
@@ -25,5 +27,6 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 app.use('/api/auth', userRoute);
+app.use('/api/desk', deskRoute);
 
 module.exports = app;
