@@ -1,0 +1,83 @@
+#main{
+    width: 1440px;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.auth--container{
+    display: flex;
+    flex-direction: column;
+    .secondAuth--container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-bottom: 0.8em;
+        .container__title{
+            font-family: Lato, Arial, Helvetica, sans-serif;
+            font-size: 2.5em;
+            font-weight: 600;
+            font-style: italic;
+            text-align: center;
+            color: $font-color;
+        }
+    }
+    .auth--container{
+        background-color: $main-color;
+        width: 31.25rem;
+        height: 12.5rem;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        .credentials__container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            .input{
+                display: flex;
+                align-items: center;
+                .fas{
+                    position: absolute;
+                    margin-left: 2rem;
+                    color: $main-color;
+                    font-size: 1.8em;
+                }
+            }
+            input{
+                margin: 0.8rem;
+                width: 23.75rem;
+                height: 3.125rem;
+                border: unset;
+                border-radius: 10px;
+                color: $font-color;
+                text-align: center;
+                font-size: 1.8em;
+                font-weight: 600;
+                &::placeholder{
+                    color: black;
+                }
+            }
+        }
+    }
+    .button{
+        margin-top: 1.8rem;
+        button{
+            background-color: $main-color;
+            border: unset;
+            border-radius: 10px;
+            color: white;
+            font-family: lato, Arial, Helvetica, sans-serif;
+            font-style: italic;
+            font-size: 2em;
+            width: 23.75rem;
+            height: 3.125rem;
+            &:hover{
+                cursor: pointer;
+                background-color: lighten($color: $main-color, $amount: 5);
+            }
+        }
+    }
+}
