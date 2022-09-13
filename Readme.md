@@ -15,9 +15,8 @@ Cette application web n'est pas destinée à être déployée et utilisée.
 Toute réclamation concernant ce projet doit se faire par mail à cette [adresse](mailto:thuard.ludovic@gmail.com).
 
 ## Technologies utilisées
-- VueJs + Vue router + Vue CLI
+- Angular CLI 14
 - NodeJs + express + Mongoose
-- Mysql(MariaDB)
 
 ## Mise en place du projet
 
@@ -36,7 +35,7 @@ Ouvrir le dossier Frontend dans le terminal de votre éditeur puis exécuter la 
 
 puis
 
-    npm run serve
+    ng serve
 
 puis rendez-vous à cette adresse:
 
