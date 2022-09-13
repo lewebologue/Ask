@@ -36,14 +36,14 @@ exports.signup = (req, res, next) =>{
 };
 
 exports.login = (req, res, next) => {
-    const {userName, password} = req.body;
-    if(!userName || !password){
+    const {username, password} = req.body;
+    if(!username || !password){
         return res.status(406).json({error: 'missing fields'})
     }
-    User.findOne({userName : userName})
+    User.findOne({username : username})
     .then(user => {
         if(!user){
-            return res.status(404).json({error: 'USer not found'})
+            return res.status(404).json({error: 'User not found'})
         }
         bcrypt.compare(password, user.password)
             .then(valid =>{
