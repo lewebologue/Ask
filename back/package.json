@@ -1,7 +1,7 @@
 {
-  "name": "pap_askservice_back",
+  "name": "ask_service",
   "version": "1.0.0",
-  "description": "Pro a Pro Ask service for intern forms digitalisation",
+  "description": "Service for Ask application",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
