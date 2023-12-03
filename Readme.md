@@ -1,22 +1,34 @@
-# Projet fictif - Ask, Plateforme de gestion digitale
+# Projet Ask, Plateforme de gestion digitale
 
-Projet personnel et totalement fictif. Création d'une webapp regroupant des outils de gestion et de suivi pour un grossiste alimentaire.
-- Gestion de demandes de répartion de matériel : Création et suivi
-- Gestion du personnel de préparation : Liste, ajout et assignation de matériel
-- Accès SaaS RH (Non fonctionnel)
-- Suivi des palettes europe
+Projet personnel et totalement fictif. Création d'une webapp regroupant des outils de gestion et de suivi pour une entreprise (ERP).
+- Gestion de tickets informatique : Création, mise à jour, et suivi.
+- Gestion parc informatique : Liste, ajout et assignation de matériel.
+- Gestion du personnel :
+    - Liste, ajout et assignation de personnel.
+    - Gestion des congés : Création, mise à jour, et suivi.
+    - Gestion des absences : Création, mise à jour, et suivi.
+    - Demande d'assignation de matériel informatique: Création, mise à jour, et suivi.
+
 
 ## Disclaimer
 
 Cette application web est un projet purement fictif, réalisé dans un seul but de maintien des compétences.
-L'entreprise utilisée dans ce projet n'est en aucun cas liée à ce projet ni à son utlisation.
-Cette application web n'est pas destinée à être déployée et utilisée.
+Cette application web n'est pas utilisée dans un cadre professionnel.
 
 Toute réclamation concernant ce projet doit se faire par mail à cette [adresse](mailto:thuard.ludovic@gmail.com).
 
 ## Technologies utilisées
-- Angular CLI 14
-- NodeJs + express + Mongoose
+- Frontend:
+    - TBD
+- Backend:
+    - NodeJS
+    - Express
+    - TypeScript
+- Base de données:
+    - PostgeSQL
+    - TypeORM
+- Conteneurisation:
+    - Docker
 
 ## Mise en place du projet
 
@@ -31,11 +43,11 @@ Sinon, vous pouvez:
 
 Ouvrir le dossier Frontend dans le terminal de votre éditeur puis exécuter la commande:
 
-    npm install
+    npm ci
 
 puis
 
-    ng serve
+    npm run watch
 
 puis rendez-vous à cette adresse:
 
@@ -45,12 +57,20 @@ puis rendez-vous à cette adresse:
 
 Ouvrir le dossier Backend dans le terminal de votre éditeur puis exécuter la commande:
 
-    npm install
+    npm ci
 
 puis
 
-    nodemon server ou node server
+    nnpm run watch:tsc
 
 ## Erreur possibles
 
-Dans le cadre d'un deploiment sous linux, node v17 présentant des dysfonctionnements sur ce sytème d'éxploitation, vous devez lancer le front-end avec la version 16(LTS).
+Dans le can d'une erreur, merci de créer une issue sur le repo github du projet.
+[ICI](https://github.com/lewebologue/Ask/issues)
+<br/>
+Veillez à bien détailler l'erreur rencontrée et à fournir les logs et/ou screenshot de l'application ou du service.
+Avant de valider votre issue, merci de verifier:
+- Que votre environnement est bien configuré
+- Que votre base de données est bien configurée
+- Que votre base de données est bien accessible
+- Que celle-ci n'ai pas dèjà été reportée
