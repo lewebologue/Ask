@@ -1,0 +1,134 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Employee {
+  id                String     @id @default(uuid())
+  corporateId       String     @unique
+  firstname         String  
+  lastname          String  
+  username          String     @unique
+  company_email     String     @unique
+  personnal_email   String?    @unique
+  company_phone     String?    @unique
+  personnal_phone   String?    @unique
+  password          String  
+  function          Function
+  service           Service[]
+  equipment         Equipment[]
+  companyCar        Company_Car?
+  superAdmin        Boolean   @default(false)
+}
+
+model Equipment {
+  id                String    @id @default(uuid())
+  name              String?
+  type              Equipment_type[]
+  serialNumber      String
+  employee          Employee  @relation(fields: [employeeId], references: [corporateId])
+  employeeId        String    @unique
+}
+
+model Company_Car {
+  id                String    @id @default(uuid())
+  brand             String
+  model             String
+  color             String
+  licensePlate      String    @unique
+  employee          Employee  @relation(fields: [employeeId], references: [corporateId])
+  employeeId        String    @unique
+}
+
+
+enum Role {
+  GUEST
+  USER
+  ADMIN
+}
+
+enum Service {
+  IT
+  HR
+  FINANCE
+  MARKETING
+  SALES
+  EXPORT
+  CUSTOMER_SERVICE
+  ADMINISTRATION
+  MANAGEMENT
+  WAREHOUSE_MANAGEMENT
+  WAREHOUSE_PRODUCTION
+}
+
+enum Function {
+  IT_HELPDESK
+  IT_DEVELOPMENT
+  IT_INFRASTRUCTURE
+  IT_MANAGEMENT
+  HR_RECRUITMENT
+  HR_TRAINING
+  HR_ADMINISTRATION
+  HR_MANAGEMENT
+  FINANCE_ACCOUNTING
+  FINANCE_BILLING
+  FINANCE_MANAGEMENT
+  MARKETING_COMMUNICATION
+  MARKETING
+  MARKETING_MANAGEMENT
+  SALES
+  PRE_SALES
+  SALES_MANAGEMENT
+  EXPORT
+  EXPORT_ACCOUNTING
+  EXPORT_MANAGEMENT
+  CUSTOMER_SERVICE_EMPLOYEE
+  CUSTOMER_SERVICE_MANAGEMENT
+  ADMINISTRATION
+  ADMINISTRATION_MANAGEMENT
+  MANAGEMENT
+  WAREHOUSE_MANAGEMENT
+  WAREHOUSE_PRODUCTION
+}
+
+enum Cars_brand {
+  AUDI
+  BMW
+  CITROEN
+  DACIA
+  FIAT
+  FORD
+  HONDA
+  HYUNDAI
+  KIA
+  MAZDA
+  MERCEDES
+  NISSAN
+  OPEL
+  PEUGEOT
+  RENAULT
+  SEAT
+  SKODA
+  SUZUKI
+  TOYOTA
+  VOLKSWAGEN
+  VOLVO
+}
+
+enum Equipment_type {
+  COMPUTER
+  CELLPHONE
+  FORKLIFT
+  SCANNER
+  OTHER
+}
